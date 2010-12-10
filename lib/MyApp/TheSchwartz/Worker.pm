@@ -7,8 +7,8 @@ use UNIVERSAL::require;
 use Parallel::Prefork;
 use Module::Pluggable::Fast
     require => 1,
-    name => 'components',
-    search => [qw/MyApp::TheSchwartz::Function/];
+    name    => 'components',
+    search  => [qw/MyApp::TheSchwartz::Function/];
 
 __PACKAGE__->mk_accessors(qw/option worker/);
 
@@ -67,11 +67,8 @@ sub run {
     while ($pm->signal_received ne 'TERM') {
         $pm->start and next;
 
-        say "workin";
-
         $self->init_worker;
         $self->worker->work;
-        say "working";
 
         $pm->finish;
     }

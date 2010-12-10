@@ -4,13 +4,13 @@ use MyApp::TheSchwartz::Client;
 use Getopt::Long;
 
 my %args;
-GetOptions(\%args, qw/Sleep Foo/);
+GetOptions(\%args, qw/Foo Bar/);
 
 my $client = MyApp::TheSchwartz::Client->new();
 
-if ($args{Sleep}) {
-    $client->enqueue("Sleep");
+if ($args{Foo}) {
+    $client->enqueue(Foo => {str => "call foo!"});
 }
-elsif ($args{Foo}) {
-    $client->enqueue("Foo");
+elsif ($args{Bar}) {
+    $client->enqueue(Bar => {str => "BAAAAAAAAAAAAAAAAAAR !!"});
 }

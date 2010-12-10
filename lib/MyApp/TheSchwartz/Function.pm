@@ -6,10 +6,10 @@ sub work {
     my ($class) = shift;
     my TheSchwartz::Job $job = shift;
 
-    p [$class, $job];
-
+    say "work begin: $class";
     $class->do_work($job->arg);
     $job->completed;
+    say "work end: $class";
 }
 
 1;
