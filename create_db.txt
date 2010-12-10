@@ -1,0 +1,2 @@
+mysql -u root -e 'create database theschwartz_sample'
+mysql -u root theschwartz_sample < theschwartz_schema.sql
