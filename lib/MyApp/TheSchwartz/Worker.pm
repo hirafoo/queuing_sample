@@ -45,7 +45,6 @@ sub init_worker {
 
     for my $m (__PACKAGE__->components) {
         $m->require;
-        say "can_do: $m";
         $worker->can_do($m);
     }
 
